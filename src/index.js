@@ -5,7 +5,7 @@ const request = require('request');
 const {RAZORPAY_API_URL, SUBSCRIPTIONS, PAYOUTS, PLANS} = require('./commons/commons');
 const crypto = require('crypto');
 const {stat} = require("fs");
-const rateLimitingFilter=require("./commons/middlewares/middleware");
+//const rateLimitingFilter=require("./commons/middlewares/middleware");
 const key = crypto.randomBytes(32);
 const iv = crypto.randomBytes(16);
 /*Set up Admin API for Firebase*/
@@ -44,7 +44,7 @@ app.use(bodyParser.urlencoded({extended: false,type:function(){
     return true;
 }}));
 app.use(bodyParser.json());
-app.use(rateLimitingFilter);
+//app.use(rateLimitingFilter);
 app.get('/', (req, res) => res.send('Hello World'));
 // app.use(bodyParser);
 // Insecure routes
