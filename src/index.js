@@ -34,16 +34,16 @@ const serviceAccount = {
 // Initialize the app
 admin.initializeApp({credential: admin.credential.cert(serviceAccount)});
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
-});
 // app.disable('x-powered-by')
 
 // app.use(cors(corsOptions))
-app.use(bodyParser.urlencoded({extended: false,type:function(){
-    return true;
-}}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
 //app.use(rateLimitingFilter);
 app.get('/', (req, res) => res.send('Hello World'));
 // app.use(bodyParser);
