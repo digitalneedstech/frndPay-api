@@ -67,6 +67,10 @@ function decrypt(text) {
 }
 app.post('/encrypt', function (req, res) {
     var user = req.body;
+    return res.status(200).send(user.name);
+});
+app.post('/encrypt', function (req, res) {
+    var user = req.body;
     var encryptResponse = encrypt(user.name);
     return res.status(200).send(encryptResponse);
 });
