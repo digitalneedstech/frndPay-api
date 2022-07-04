@@ -108,7 +108,8 @@ app.post('/user/:userId/payout/:id', async function (req, res, next) {
 
 app.get('/user/:userId/payout/:id', async function (req, res, next) {
     let db = admin.firestore()
-    console.log(req.body.id)
+    console.log(req.params["userId"]);
+    console.log(req.params["id"]);
     // Depending on your schema, save data by specifying the collection name, //document name and data contents as follows
     const data = await db.collection("users").doc(req.params["userId"]).collection("payouts").doc(req.params["id"]).get();
     if (data.empty) {
