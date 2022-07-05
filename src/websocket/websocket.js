@@ -165,6 +165,7 @@ wsServer.on('request', function (request) {
 
         const jsonMessage = JSON.parse(message.utf8Data);
         console.log("message", jsonMessage);
+        /*
         const planId = jsonMessage["payload"]["subscription"]["entity"]["id"];
         const subscriptionId = jsonMessage["payload"]["subscription"]["entity"]["plan_id"];
         const customerId = jsonMessage["payload"]["subscription"]["entity"]["customer_id"];
@@ -204,7 +205,8 @@ wsServer.on('request', function (request) {
                 }
                 break;
         }
-        console.log('Received Message:', JSON.parse(message.utf8Data)["val"]);
+        */
+        //console.log('Received Message:', JSON.parse(message.utf8Data)["val"]);
 
         connection.sendUTF('Hi this is WebSocket server!');
     });

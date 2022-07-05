@@ -26,7 +26,8 @@
     "husky": "^7.0.4",
     "mysql2": "^2.3.3",
     "razorpay": "^2.8.1",
-    "sequelize": "^6.17.0"
+    "sequelize": "^6.17.0",
+    "websocket": "^1.0.34"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.36",
